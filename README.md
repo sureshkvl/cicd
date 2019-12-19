@@ -2,8 +2,12 @@
 cicd
 
 ## prerequisties:
-ubuntu vm and docker, docker-compose installed
 
+- ubuntu vm and docker, docker-compose installed
+
+
+
+## Installation:
 
 1. start gitea
 ----------------
@@ -20,16 +24,18 @@ sudo docker-compose -f nexus.yaml up -d
 
 3. start concourse
 -------------------
+cd concourse
+sudo ./keys/generate
+sudo docker-compose up -d
 
 
+## Ports:
 
-
-
-Ports:
-
-gitea - 8080, 2221
+gitea - 80,2222
+concourse : 8080
 nexus - 8081, 8082, 8083, 8084, 8085, 8123
-concourse : 8000
+
+
 
 ## References:
 1. https://www.digitalocean.com/community/tutorials/how-to-install-and-use-docker-on-ubuntu-18-04
