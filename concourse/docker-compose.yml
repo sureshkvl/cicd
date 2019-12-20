@@ -26,8 +26,8 @@ services:
       CONCOURSE_POSTGRES_USER: concourse_user
       CONCOURSE_POSTGRES_PASSWORD: concourse_pass
       CONCOURSE_POSTGRES_DATABASE: concourse
-      CONCOURSE_ADD_LOCAL_USER: test:test
-      CONCOURSE_MAIN_TEAM_LOCAL_USER: test
+      CONCOURSE_ADD_LOCAL_USER: admin:admin123!@#
+      CONCOURSE_MAIN_TEAM_LOCAL_USER: admin
     logging:
       driver: "json-file"
       options:
