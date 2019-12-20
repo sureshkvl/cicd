@@ -36,6 +36,25 @@ concourse : 8080
 nexus - 8081, 8082, 8083, 8084, 8085, 8123
 
 
+## UI
+
+concourse(8080):
+
+username/password: test
+
+gitea(80):
+
+first registered user will be admin (to be explored)
+suresh/
+
+nexus(8081):
+admin
+password will be in  nexus-data/admin.password
+
+
+
+
+
 
 ## References:
 1. https://www.digitalocean.com/community/tutorials/how-to-install-and-use-docker-on-ubuntu-18-04

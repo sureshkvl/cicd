@@ -14,7 +14,10 @@ services:
       - DB_HOST=db:5432
       - DB_NAME=gitea
       - DB_USER=gitea
-      - DB_PASSWD=gitea      
+      - DB_PASSWD=gitea    
+      - DISABLE_REGISTRATION=true
+      - REQUIRE_SIGNIN_VIEW=true
+      - APP_NAME="GITEA - SURESH"  
     restart: always
     networks:
       - gitea
