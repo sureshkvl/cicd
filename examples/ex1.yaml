@@ -1,0 +1,26 @@
+resources:
+  - name: project-code
+    type: git
+    check_every: 1m
+    source:
+      uri: ((git_repo))
+      branch: ((git_branch))
+      private_key: ((git_ssh_key))
+      #username: ((git_username))
+      #password: ((git_password))
+  - name: docker-build
+    type: docker-image
+    source:
+      username: ((docker-username))
+      password: ((docker-password))
+      repository: ((docker-repo))/flask-demo
+      tag: ((docker-image-tag))
+jobs:
+  - name: dockerbuild
+    serial: true
+    plan:
+      - get: project-code
+        trigger: true
+      - put: docker-build
+        params:
+          build: project-code

@@ -1,0 +1,41 @@
+downliad  CLI(fly)
+---------------
+
+download fly binary https://concourse-ci.org/
+
+unzip and move fly binary to /usr/bin with executable permission.
+
+setup target name in CLI 
+---------------------
+
+fly -t test login -c http://cicd:8080 -u admin -p 'admin123!@#'
+
+
+Thats all
+
+
+
+ex1 :
+======
+Objective:
+- get the src code from github.com
+- build the docker image and push it  with docker hub.
+
+variables1.yaml contains  github and docker hub credentials.
+
+fly -t test set-pipeline -c ex1.yaml --load-vars-from variables1.yaml -p ex1
+fly -t test unpause-pipeline -p ex1
+
+
+ex2:
+======
+
+Objective:
+- get the src code from our private gitea repo(part of our cicd).
+- build the docker image and push it to our private nexus docker registry
+
+
+variables2.yaml contains  gitea and nexus credentials.
+
+fly -t test set-pipeline -c ex2.yaml --load-vars-from variables2.yaml -p ex2
+fly -t test unpause-pipeline -p ex2
